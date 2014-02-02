@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="LinqDemoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Data\LinqDemo.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Edward.Wilde.CSharp.Features.Properties.Settings" SettingsPropertyName="LinqDemoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="" Member="Products">
+    <Type Name="Product">
+      <Column Name="Id" Type="System.Int32" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="SupplierId" Type="System.Int32" CanBeNull="false" />
+      <Column Member="Price" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="Suppliers">
+    <Type Name="Supplier">
+      <Column Name="Id" Type="System.Int32" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

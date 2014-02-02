@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using Edward.Wilde.CSharp.Features.Model;
 using Edward.Wilde.CSharp.Features.Utilities;
 
 namespace Edward.Wilde.CSharp.Features.Sorting

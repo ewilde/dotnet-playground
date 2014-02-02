@@ -48,5 +48,10 @@ namespace Edward.Wilde.CSharp.Features.Utilities
 
             }
         }
+
+        public static void BlankLine()
+        {
+            Console.WriteLine(string.Empty);
+        }
     }
 }

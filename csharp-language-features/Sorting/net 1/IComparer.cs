@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Edward.Wilde.CSharp.Features.Model;
 using Edward.Wilde.CSharp.Features.Utilities;
 
 namespace Edward.Wilde.CSharp.Features.Sorting
