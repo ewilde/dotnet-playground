@@ -63,11 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delegates\Example_using_delegates.cs" />
+    <Compile Include="Enums\EnumExtensions.cs" />
     <Compile Include="Expression Trees\ExpressionTrees.cs" />
     <Compile Include="Generics\GenericConstraints.cs" />
     <Compile Include="Interview Questions\ListQuestions.cs" />
     <Compile Include="Interview Questions\ListQuestionTests.cs" />
-    <Compile Include="Interview Questions\StringQuestion.cs" />
+    <Compile Include="Interview Questions\StringQuestions.cs" />
     <Compile Include="Interview Questions\ThreadingQuestions.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Program.cs" />

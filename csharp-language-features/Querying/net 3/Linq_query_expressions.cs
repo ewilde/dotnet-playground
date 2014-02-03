@@ -29,6 +29,7 @@ namespace Edward.Wilde.CSharp.Features.Querying.net_3
                     item => string.Format("£ {0:0.00}", item.Price));
             ConsoleUtility.PrintSuccess(text);
             ConsoleUtility.BlankLine();
+
         }
     }
 }
