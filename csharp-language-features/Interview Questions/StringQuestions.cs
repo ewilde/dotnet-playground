@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
 
-namespace csharp_language_features.Interview_Questions
+namespace csharp_language_features.InterviewQuestions
 {
     public static class StringsQuestions
     {

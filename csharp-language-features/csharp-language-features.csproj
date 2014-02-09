@@ -68,6 +68,8 @@
     <Compile Include="Generics\GenericConstraints.cs" />
     <Compile Include="Interview Questions\ListQuestions.cs" />
     <Compile Include="Interview Questions\ListQuestionTests.cs" />
+    <Compile Include="Interview Questions\QueueQuestions.cs" />
+    <Compile Include="Interview Questions\StackQuestions.cs" />
     <Compile Include="Interview Questions\StringQuestions.cs" />
     <Compile Include="Interview Questions\ThreadingQuestions.cs" />
     <Compile Include="Model\Supplier.cs" />

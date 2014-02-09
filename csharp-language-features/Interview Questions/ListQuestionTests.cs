@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace csharp_language_features.Interview_Questions
+namespace csharp_language_features.InterviewQuestions
 {
     [TestFixture]
     public class ListQuestionTests

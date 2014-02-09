@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharp_language_features.Interview_Questions
+namespace csharp_language_features.InterviewQuestions
 {
     /// <summary>
     /// Questions asked that operate on lists
