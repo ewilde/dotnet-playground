@@ -9,6 +9,33 @@ namespace algorithms.Sorting
     /// Divide the unsorted list into n sublists, each containing 1 element (a list of 1 element is considered sorted).
     /// Repeatedly merge sublists to produce new sorted sublists until there is only 1 sublist remaining. This will be the sorted list.
     /// </summary>
+    /// <code>
+    /// Psuedo code: where A is an array to be sorted
+    /// 
+    /// Sort(Array A) {
+    ///     halfLen ← A.size
+    ///     left ← new Array[halfLen]
+    ///     right ← new Array[A.size - halfLen]
+    /// 
+    ///     Array.Copy(A, left, left.size)
+    ///     Array.Copy(A, sourceIndex: halfLen, destArray: right, length: right.size)
+    /// 
+    ///     left = Sort(left)
+    ///     right = Sort(right)
+    ///     
+    ///     return Merge(left, right);
+    /// }
+    /// 
+    /// Merge(Array A, Array B) {
+    ///   result = new Array[A.size + B.size]
+    /// 
+    ///   aPos, bPos = 0
+    /// 
+    ///   for i = 0 to A.size {
+    ///      ....
+    ///   }
+    /// }
+    /// </code>
     /// <typeparam name="T"></typeparam>
     public class MergeSort<T>  where T : IComparable
     {

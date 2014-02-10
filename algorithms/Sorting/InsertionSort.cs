@@ -47,22 +47,64 @@ namespace algorithms.Sorting
     {
         public T[] Sort(T[] values)
         {
-            var clone = (T[]) values.Clone();
-            for (int i = 1; i < clone.Length; i++)
+            var items = (T[]) values.Clone();
+            for (int i = 1; i < items.Length; i++)
             {
                 int j = i - 1;
-                T x = clone[i];
+                T x = items[i];
 
-                while (j >= 0 && x.CompareTo(clone[j]) < 0)                
+                while (j >= 0 && x.CompareTo(items[j]) < 0)                
                 {
-                    clone[j + 1] = clone[j];
+                    items[j + 1] = items[j];
                     j = j - 1;                    
                 }
 
-                clone[j + 1] = x;
+                items[j + 1] = x;
             }
 
-            return clone;
+            return items;
+        }
+    }
+
+    /// <summary>
+    /// Insertion sort iterates, consuming one input element each repetition, 
+    /// and growing a sorted output list.
+    /// 
+    /// Best case:  O(n)
+    /// Worst case: n^2
+    /// </summary>
+    /// <code>
+    /// Psuedo code
+    /// 
+    /// for i = 1 to n -1
+    ///  j = i
+    /// 
+    ///  while j > 0 and A[j] < A[j-1]
+    ///    swap(A[j], A[j-1]
+    ///    j = j - 1
+    /// </code>
+    /// <remarks>
+    /// This implementation is slower than <see cref="InsertionSort{T}"/> because of the continuous swaping
+    /// </remarks>
+    public class InsertionSort2<T> where T : IComparable<T>
+    {
+        public T[] Sort(T[] values)
+        {
+            var items = (T[])values.Clone();
+            for (int i = 1; i < items.Length; i++)
+            {
+                int j = i;
+
+                var x = items[i];
+                while (j > 0 && items[j].CompareTo(items[j - 1]) < 0)
+                {
+                    items[j - 1] = items[j];
+                    items[j] = x;
+                    j = j - 1;
+                }
+            }
+
+            return items;
         }
     }
 
@@ -94,6 +136,22 @@ namespace algorithms.Sorting
             time.Start();
             
             var sortedValues = new InsertionSort<int>().Sort(values);
+            time.Stop();
+            Console.WriteLine("Worst case: {0} ms", time.ElapsedMilliseconds);
+
+            Assert.That(sortedValues, Is.Ordered);
+            // Assert.That(sortedValues, Is.EquivalentTo(values));
+        }
+
+        [Test]
+        public void Worst_cast_list_is_sorted2()
+        {
+            int[] values = Data.GetSortedInteger(6000, @ascending: false);
+
+            var time = new Stopwatch();
+            time.Start();
+            
+            var sortedValues = new InsertionSort2<int>().Sort(values);
             time.Stop();
             Console.WriteLine("Worst case: {0} ms", time.ElapsedMilliseconds);
 
