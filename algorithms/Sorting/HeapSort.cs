@@ -6,6 +6,10 @@ using NUnit.Framework;
 
 namespace algorithms.Sorting
 {
+    /// <summary>
+    /// Heaps have the property of every node being either less than it's parent (max-heap) or greater than is parent (min-heap)
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class HeapSort<T> : IEnumerable<T> where T : IComparable<T>
     {
         private T[] data;
@@ -75,12 +79,12 @@ namespace algorithms.Sorting
 
         private int RightChild(int parent)
         {
-            return 2 * (parent + 1);
+            return (2 * parent) + 2;
         }
 
         private  int LeftChild(int parent)
         {
-            return 2 * parent + 1;
+            return (2 * parent) + 1;
         }
     }
 
