@@ -1,0 +1,21 @@
+﻿1. Prime numbers
+a. Generate an algorithm to generate prime numbers between 1 and 100.
+b. Is there a more efficient way to do this than n^2?
+
+2. Power of sets
+Given and input of IEnumerable<T> 'n' return all the possible combinations of n as IEnumerable<IEnumerable<T>>. This is called the powersets of n.
+
+3. Statistics
+3.1
+Russian roulette. Given a revolver with two bullets adjcent to each other in the chamber. If I fire the gun and survive. I am forced to go again.
+Should I spin the barrel or pull the trigger again?
+
+3.2
+I have a bag of 1000 coins. One of the coins has two heads.
+
+If I pull out a coin and toss it 10 times and each time get heads, what is the probability that I have the dodgy coin?
+
+
+4. Most efficient way to find the n largest numbers in an array?
+
+5. Write an interative algortim to traverse a binary tree depth first
