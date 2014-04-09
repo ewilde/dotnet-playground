@@ -1,1 +1,62 @@
 ﻿1. XML serialization examples
+2. Web client dynamic get / post of json
+	expando with json
+	
+	//get
+	 var result = DoGet(RestListProjects);           
+            dynamic projectList = result.Content.ReadAsAsync<dynamic>().Result.project;
+            foreach (dynamic item in projectList)
+            {
+                var info = InitializeProjectInfo(item.href.ToString());
+                item.info = info;                
+                projects.Add(item.id.ToString(), item);
+            }
+
+	//post
+	  dynamic json = new ExpandoObject();
+                json.personal = false;
+                
+                json.buildType = new ExpandoObject();
+                json.buildType.id = buildType.id;
+
+                json.comment = new ExpandoObject();
+                json.comment.text = "Build queued from Powershell command";
+
+                this.DoPost(json, RestBuildQueue);
+
+
+        protected HttpResponseMessage DoPost(dynamic json, string uriPath)
+        {
+            try
+            {
+                var result = this.Client.PostAsync(uriPath, new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json")).Result;
+                if (result.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    throw new Exception("401 from teamcity, are you setup up as a user?");
+                }
+                return result;
+            }
+            catch (Exception exception)
+            {
+                this.WriteError(exception);
+                return null;
+            }
+        }
+
+        protected HttpResponseMessage DoGet(string uriPath)
+        {
+            try
+            {
+                var result = this.Client.GetAsync(new Uri(this.TeamCityUri, uriPath)).Result;
+                if (result.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    throw new Exception("401 from teamcity, are you setup up as a user?");
+                }
+                return result;
+            }
+            catch (Exception exception)
+            {
+                this.WriteError(exception);
+                return null;
+            }
+        }

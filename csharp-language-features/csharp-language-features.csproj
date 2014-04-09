@@ -91,6 +91,7 @@
     <Compile Include="Querying\net 3\Linq_query_expressions.cs" />
     <Compile Include="Querying\net 3\Linq_sql.cs" />
     <Compile Include="Querying\net 3\Linq_to_xml.cs" />
+    <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />
     <Compile Include="Sorting\net 1\IComparable.cs" />
