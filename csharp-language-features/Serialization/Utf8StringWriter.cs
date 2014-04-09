@@ -9,5 +9,5 @@ namespace Edward.Wilde.CSharp.Features.Serialization
         {
             get { return Encoding.UTF8; }
         }
-    }
+    }    
 }
