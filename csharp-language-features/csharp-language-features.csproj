@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delegates\Example_using_delegates.cs" />
+    <Compile Include="Dispose\DisposableComponent.cs" />
     <Compile Include="Enums\EnumExtensions.cs" />
     <Compile Include="Expression Trees\ExpressionTrees.cs" />
     <Compile Include="Generics\GenericConstraints.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Sorting\net 3.5\Sorting_in_net3_5.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
+    <Compile Include="Utilities\RetryUtility.cs" />
     <Compile Include="Utilities\TableParser.cs" />
   </ItemGroup>
   <ItemGroup>
