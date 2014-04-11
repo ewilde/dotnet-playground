@@ -26,7 +26,8 @@ namespace Edward.Wilde.CSharp.Features.Utilities
             {
                 try
                 {
-                    method.Invoke();                    
+                    method.Invoke();
+                    return;
                 }
                 catch (Exception exception)
                 {
@@ -39,11 +40,10 @@ namespace Edward.Wilde.CSharp.Features.Utilities
                     if (sleepTime < MaxSleepTime)
                     {
                         sleepTime = sleepTime + sleepTime; // increase waits between retry attempts
-                    }                    
+                    }
                 }
             }
-
-            while (timer.ElapsedMilliseconds <= timeoutMilliseconds);            
+            while (timer.ElapsedMilliseconds <= timeoutMilliseconds);
         }
         /// <summary>
         /// Executes a function until it succeeds or times out. Success determined by no error
@@ -78,11 +78,11 @@ namespace Edward.Wilde.CSharp.Features.Utilities
                     if (sleepTime < MaxSleepTime)
                     {
                         sleepTime = sleepTime + sleepTime; // increase waits between retry attempts
-                    }                    
+                    }
                 }
             }
-
             while (timer.ElapsedMilliseconds <= timeoutMilliseconds);
+
             return result;
         }
 
@@ -133,8 +133,8 @@ namespace Edward.Wilde.CSharp.Features.Utilities
                     }
                 }
             }
-
             while (timer.ElapsedMilliseconds <= timeoutMilliseconds);
+
             return result;
         }
     }
