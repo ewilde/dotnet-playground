@@ -101,6 +101,7 @@
     <Compile Include="Sorting\net 2\IComparer.cs" />
     <Compile Include="Sorting\net 3.5\Sorting_in_net3_5.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="System\Console.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
     <Compile Include="Utilities\PathExtensions.cs" />
     <Compile Include="Utilities\RetryUtility.cs" />

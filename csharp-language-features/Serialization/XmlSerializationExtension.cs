@@ -20,6 +20,17 @@ namespace Edward.Wilde.CSharp.Features.Serialization
             xmlSerializer.Serialize(xmlWriter, objectToSerialize);
 
             return stringWriter.ToString();
-        }  
+        }
+
+        public static T XmlDeserialize<T>(this string value)
+        {
+            var serializer = new XmlSerializer(typeof(T));
+
+            using (var reader = new StringReader(value))
+            {
+                return (T)serializer.Deserialize(reader);
+                
+            }            
+        }
     }
 }
