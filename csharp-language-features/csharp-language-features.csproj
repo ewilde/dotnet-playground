@@ -101,6 +101,7 @@
     <Compile Include="Sorting\net 2\IComparer.cs" />
     <Compile Include="Sorting\net 3.5\Sorting_in_net3_5.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Strings\StringExtensions.cs" />
     <Compile Include="System\Console.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
     <Compile Include="Utilities\PathExtensions.cs" />
@@ -156,9 +157,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
