@@ -105,6 +105,7 @@
     <Compile Include="System\Console.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
     <Compile Include="Utilities\PathExtensions.cs" />
+    <Compile Include="Utilities\ProcessExtensions.cs" />
     <Compile Include="Utilities\RetryUtility.cs" />
     <Compile Include="Utilities\TableParser.cs" />
   </ItemGroup>
