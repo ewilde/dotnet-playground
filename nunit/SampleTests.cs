@@ -15,21 +15,39 @@ namespace nunit.example
     [TestFixture]
     public class SampleTests
     {
-        [TestFixtureSetUp]
-        public void Setup()
+        [TestFixtureSetUp] // Once per class
+        public void TestFixtureSetUp()
         {
-            Debug.WriteLine("TestFixture|TestFixtureSetUp: Setup");            
+            Debug.WriteLine("SampleTests: TestFixtureSetUp");            
         }
 
-        [TestFixtureTearDown]
+        [TestFixtureTearDown] // Once per class
+        public void TestFixtureTearDown()
+        {
+            Debug.WriteLine("SampleTests: TestFixtureTearDown");            
+        }
+
+        [SetUp] // Once per test
+        public void SetUp()
+        {
+            Debug.WriteLine("SampleTests: Setup");
+        }
+
+        [TearDown] // Once per test
         public void TearDown()
         {
-            Debug.WriteLine("TestFixture|TestFixtureSetUp: TearDown");            
+            Debug.WriteLine("SampleTests: TearDown");
         }
-
     
         [Test]
         public void creating_an_instance_of_employee_should_initialize_foo()
+        {
+            var product = new Product("Bean", 15.5m);
+            Assert.That(product.Name, Is.EqualTo("Bean"));
+        }
+
+        [Test]
+        public void creating_an_instance_of_employee_should_initialize_foo2()
         {
             var product = new Product("Bean", 15.5m);
             Assert.That(product.Name, Is.EqualTo("Bean"));
