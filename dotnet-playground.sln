@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net-example", "log4net-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit-example", "nunit\nunit-example.csproj", "{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mstest-unittest-example", "mstest-unittest-example\mstest-unittest-example.csproj", "{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
