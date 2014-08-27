@@ -65,6 +65,7 @@
     <Compile Include="Delegates\Example_using_delegates.cs" />
     <Compile Include="Dispose\DisposableComponent.cs" />
     <Compile Include="Enums\EnumExtensions.cs" />
+    <Compile Include="Equality\OverridingEquals.cs" />
     <Compile Include="Expression Trees\ExpressionTrees.cs" />
     <Compile Include="Generics\GenericConstraints.cs" />
     <Compile Include="Interview Questions\ListQuestions.cs" />
