@@ -6,6 +6,7 @@ namespace Edward.Wilde.CSharp.Features.Utilities
     public static class Retry
     {
         public static double DefaultTimeout = System.TimeSpan.FromSeconds(5).TotalMilliseconds;
+        public static int DefaultRetryCount = 5;
         public static double MaxSleepTime = TimeSpan.FromSeconds(1).TotalMilliseconds;
 
         /// <summary>
@@ -45,6 +46,72 @@ namespace Edward.Wilde.CSharp.Features.Utilities
             }
             while (timer.ElapsedMilliseconds <= timeoutMilliseconds);
         }
+
+        /// <summary>
+        /// Executes a function until it succeeds or times out. Success determined by no error
+        /// occuring during the invocation of the <paramref name="method"/>
+        /// </summary>
+        /// <param name="method">method to execute</param>
+        /// <param name="onError">optional action to invoke if an error occurs</param>
+        /// <param name="retry">number of time to retry, defaults to 5 times.</param>
+        public static void Do(Action method, Action<Exception> onError = null, int? retry = null)
+        {
+            retry = retry ?? DefaultRetryCount;
+            int retryAttempt = 0;
+            do
+            {
+                try
+                {
+                    method.Invoke();
+                    return;
+                }
+                catch (Exception exception)
+                {
+                    retryAttempt = retryAttempt + 1;
+                    if (onError != null)
+                    {
+                        onError.Invoke(exception);
+                    }
+                }
+            }
+            while (retryAttempt <= retry);
+        }
+
+        /// <summary>
+        /// Executes a function until it succeeds or times out. Success determined by no error
+        /// occuring during the invocation of the <paramref name="method"/>
+        /// </summary>
+        /// <param name="method">method to execute</param>
+        /// <param name="onError">optional action to invoke if an error occurs</param>
+        /// <param name="retry">number of time to retry, defaults to 5 times.</param>
+        public static ExecuteResult<T> Do<T>(Func<T> method, Action<Exception> onError = null, int? retry = null)
+        {
+            retry = retry ?? DefaultRetryCount;
+            int retryAttempt = 0;
+
+            var result = new ExecuteResult<T>();
+            do
+            {
+                try
+                {
+                    result.Result = method.Invoke();
+                    return result;
+                }
+                catch (Exception exception)
+                {
+                    retryAttempt = retryAttempt + 1;
+                    result.LastException = exception;
+                    if (onError != null)
+                    {
+                        onError.Invoke(exception);
+                    }
+                }
+            }
+            while (retryAttempt <= retry);
+
+            return result;
+        }
+
         /// <summary>
         /// Executes a function until it succeeds or times out. Success determined by no error
         /// occuring during the invocation of the <paramref name="method"/>
