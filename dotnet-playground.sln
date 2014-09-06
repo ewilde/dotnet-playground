@@ -1,24 +1,52 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-language-features", "csharp-language-features\csharp-language-features.csproj", "{C5C87041-02FA-41E8-8171-2270000474F6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{00084FCC-0D22-4B8E-B893-67F3C7C1E24A}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithms", "algorithms\algorithms.csproj", "{E5DA724A-12F8-4C1E-B99E-93585DE6881E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testing", "testing", "{B433E6FF-BB8A-44AB-86D2-83C2B9DD3394}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net-example", "log4net-example\log4net-example.csproj", "{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "programming", "programming", "{0E659BF9-B1F2-4302-87D1-8FB27668C5CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit-example", "nunit\nunit-example.csproj", "{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logging", "logging", "{987D4805-BA34-49CA-B85D-35948D47E24B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mstest-unittest-example", "mstest-unittest-example\mstest-unittest-example.csproj", "{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messaging", "messaging", "{DFCD7792-EB12-40A7-9C54-130F3AA626E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net-example", "logging\log4net-example\log4net-example.csproj", "{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\rabbitmq\README.md = messaging\rabbitmq\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "algorithms", "programming\algorithms\algorithms.csproj", "{E5DA724A-12F8-4C1E-B99E-93585DE6881E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-language-features", "programming\csharp-language-features\csharp-language-features.csproj", "{C5C87041-02FA-41E8-8171-2270000474F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit-example", "testing\nunit\nunit-example.csproj", "{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mstest-unittest-example", "testing\mstest-unittest-example\mstest-unittest-example.csproj", "{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hello-world", "hello-world", "{B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-hello-producer", "messaging\rabbitmq\hello-world\producer\rabbitmq-hello-producer.csproj", "{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-hello-consumer", "messaging\rabbitmq\hello-world\consumer\rabbitmq-hello-consumer.csproj", "{05695495-5041-41BE-A6A0-07B25EA20C17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D05F9BDB-7745-490F-BB15-F491FB3BED17}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "work-queues", "work-queues", "{D5D05332-EF23-4B5F-BABD-2BA89269A2D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-workqueue-consumer", "messaging\rabbitmq\work-queues\consumer\rabbitmq-workqueue-consumer.csproj", "{9E2053EC-A1E5-4080-9658-A14304B76A9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-workqueue-producer", "messaging\rabbitmq\work-queues\producer\rabbitmq-workqueue-producer.csproj", "{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,18 +54,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5C87041-02FA-41E8-8171-2270000474F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5C87041-02FA-41E8-8171-2270000474F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5C87041-02FA-41E8-8171-2270000474F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5C87041-02FA-41E8-8171-2270000474F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DA724A-12F8-4C1E-B99E-93585DE6881E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C87041-02FA-41E8-8171-2270000474F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C87041-02FA-41E8-8171-2270000474F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C87041-02FA-41E8-8171-2270000474F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C87041-02FA-41E8-8171-2270000474F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,8 +74,38 @@ Global
 		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05695495-5041-41BE-A6A0-07B25EA20C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05695495-5041-41BE-A6A0-07B25EA20C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05695495-5041-41BE-A6A0-07B25EA20C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05695495-5041-41BE-A6A0-07B25EA20C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E2053EC-A1E5-4080-9658-A14304B76A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E2053EC-A1E5-4080-9658-A14304B76A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E2053EC-A1E5-4080-9658-A14304B76A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E2053EC-A1E5-4080-9658-A14304B76A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4EA2AE7-0B53-409E-AEC7-402001DDCAF9} = {B433E6FF-BB8A-44AB-86D2-83C2B9DD3394}
+		{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A} = {B433E6FF-BB8A-44AB-86D2-83C2B9DD3394}
+		{E5DA724A-12F8-4C1E-B99E-93585DE6881E} = {0E659BF9-B1F2-4302-87D1-8FB27668C5CF}
+		{C5C87041-02FA-41E8-8171-2270000474F6} = {0E659BF9-B1F2-4302-87D1-8FB27668C5CF}
+		{3B598E0A-EA67-490C-B1EC-BE8CC0D8186E} = {987D4805-BA34-49CA-B85D-35948D47E24B}
+		{9ADE7C6E-0A9C-4452-93DC-ADA1406B891A} = {DFCD7792-EB12-40A7-9C54-130F3AA626E2}
+		{B7D408E4-AEF1-449D-B519-FEE2C8F94C1F} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
+		{D5D05332-EF23-4B5F-BABD-2BA89269A2D8} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
+		{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83} = {B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}
+		{05695495-5041-41BE-A6A0-07B25EA20C17} = {B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}
+		{9E2053EC-A1E5-4080-9658-A14304B76A9E} = {D5D05332-EF23-4B5F-BABD-2BA89269A2D8}
+		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1} = {D5D05332-EF23-4B5F-BABD-2BA89269A2D8}
 	EndGlobalSection
 EndGlobal
