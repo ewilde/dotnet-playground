@@ -1,4 +1,4 @@
-﻿ 
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
@@ -31,7 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nunit-example", "testing\nu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mstest-unittest-example", "testing\mstest-unittest-example\mstest-unittest-example.csproj", "{5E44EC3F-19BD-4BB7-8EF5-2606502F8F8A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hello-world", "hello-world", "{B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. hello-world", "1. hello-world", "{B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\rabbitmq\hello-world\README.mht = messaging\rabbitmq\hello-world\README.mht
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-hello-producer", "messaging\rabbitmq\hello-world\producer\rabbitmq-hello-producer.csproj", "{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83}"
 EndProject
@@ -42,11 +45,47 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "work-queues", "work-queues", "{D5D05332-EF23-4B5F-BABD-2BA89269A2D8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. work-queues", "2. work-queues", "{D5D05332-EF23-4B5F-BABD-2BA89269A2D8}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\rabbitmq\work-queues\README.mht = messaging\rabbitmq\work-queues\README.mht
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-workqueue-consumer", "messaging\rabbitmq\work-queues\consumer\rabbitmq-workqueue-consumer.csproj", "{9E2053EC-A1E5-4080-9658-A14304B76A9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-workqueue-producer", "messaging\rabbitmq\work-queues\producer\rabbitmq-workqueue-producer.csproj", "{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. publish-subscribe", "3. publish-subscribe", "{8900F796-2BAF-49B8-9BB4-D54A029ABCE3}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\rabbitmq\publish-subscribe\README.mht = messaging\rabbitmq\publish-subscribe\README.mht
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-pubsub-consumer", "messaging\rabbitmq\publish-subscribe\rabbitmq-pubsub-consumer\rabbitmq-pubsub-consumer.csproj", "{39D03A58-7012-45AA-A9E7-3026A397F7C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-pubsub-producer", "messaging\rabbitmq\publish-subscribe\rabbitmq-pubsub-producer\rabbitmq-pubsub-producer.csproj", "{7E6A30F6-D79A-4406-9152-C05181069B35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. routing", "4. routing", "{CBA8ABDF-0E7D-468C-954D-A4B4B08659B4}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\rabbitmq\routing\README.mht = messaging\rabbitmq\routing\README.mht
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-routing-consumer", "messaging\rabbitmq\routing\rabbitmq-routing-consumer\rabbitmq-routing-consumer.csproj", "{A76DC8DA-5292-4E57-A01C-C64813502DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-routing-producer", "messaging\rabbitmq\routing\rabbitmq-routing-producer\rabbitmq-routing-producer.csproj", "{30FCF629-42D1-4558-A221-12C26CFC71F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. topics", "5. topics", "{22E36355-4D54-4914-8380-882D1F47E9D8}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\rabbitmq\topics\README.mht = messaging\rabbitmq\topics\README.mht
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-topics-consumer", "messaging\rabbitmq\topics\rabbitmq-topics-consumer\rabbitmq-topics-consumer.csproj", "{341E9291-FC3F-4F64-BBF8-B4D21E987990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-topics-producer", "messaging\rabbitmq\topics\rabbitmq-topics-producer\rabbitmq-topics-producer.csproj", "{3C0AF4EE-26FE-4E8E-A43D-B610B950B184}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. performance test", "0. performance test", "{BFF9ADE0-DE2E-4ADA-A7F2-E5EA27B42D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-perf-consumer", "messaging\rabbitmq\performance-test\rabbitmq-perf-consumer\rabbitmq-perf-consumer.csproj", "{F658BA2C-10F9-411E-953E-1019E2E11283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rabbitmq-perf-producer", "messaging\rabbitmq\performance-test\rabbitmq-perf-producer\rabbitmq-perf-producer.csproj", "{7684B167-917D-475B-A65A-292188674ECF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +129,38 @@ Global
 		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D03A58-7012-45AA-A9E7-3026A397F7C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D03A58-7012-45AA-A9E7-3026A397F7C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D03A58-7012-45AA-A9E7-3026A397F7C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D03A58-7012-45AA-A9E7-3026A397F7C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6A30F6-D79A-4406-9152-C05181069B35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6A30F6-D79A-4406-9152-C05181069B35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6A30F6-D79A-4406-9152-C05181069B35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6A30F6-D79A-4406-9152-C05181069B35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76DC8DA-5292-4E57-A01C-C64813502DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76DC8DA-5292-4E57-A01C-C64813502DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76DC8DA-5292-4E57-A01C-C64813502DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76DC8DA-5292-4E57-A01C-C64813502DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30FCF629-42D1-4558-A221-12C26CFC71F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30FCF629-42D1-4558-A221-12C26CFC71F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30FCF629-42D1-4558-A221-12C26CFC71F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30FCF629-42D1-4558-A221-12C26CFC71F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341E9291-FC3F-4F64-BBF8-B4D21E987990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341E9291-FC3F-4F64-BBF8-B4D21E987990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341E9291-FC3F-4F64-BBF8-B4D21E987990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341E9291-FC3F-4F64-BBF8-B4D21E987990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0AF4EE-26FE-4E8E-A43D-B610B950B184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0AF4EE-26FE-4E8E-A43D-B610B950B184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0AF4EE-26FE-4E8E-A43D-B610B950B184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0AF4EE-26FE-4E8E-A43D-B610B950B184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F658BA2C-10F9-411E-953E-1019E2E11283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F658BA2C-10F9-411E-953E-1019E2E11283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F658BA2C-10F9-411E-953E-1019E2E11283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F658BA2C-10F9-411E-953E-1019E2E11283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7684B167-917D-475B-A65A-292188674ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7684B167-917D-475B-A65A-292188674ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7684B167-917D-475B-A65A-292188674ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7684B167-917D-475B-A65A-292188674ECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,9 +174,21 @@ Global
 		{9ADE7C6E-0A9C-4452-93DC-ADA1406B891A} = {DFCD7792-EB12-40A7-9C54-130F3AA626E2}
 		{B7D408E4-AEF1-449D-B519-FEE2C8F94C1F} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
 		{D5D05332-EF23-4B5F-BABD-2BA89269A2D8} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
+		{8900F796-2BAF-49B8-9BB4-D54A029ABCE3} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
+		{CBA8ABDF-0E7D-468C-954D-A4B4B08659B4} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
+		{22E36355-4D54-4914-8380-882D1F47E9D8} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
+		{BFF9ADE0-DE2E-4ADA-A7F2-E5EA27B42D82} = {9ADE7C6E-0A9C-4452-93DC-ADA1406B891A}
 		{1DF97C58-C7DC-4C3B-8BD8-0EF2B8B6DA83} = {B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}
 		{05695495-5041-41BE-A6A0-07B25EA20C17} = {B7D408E4-AEF1-449D-B519-FEE2C8F94C1F}
 		{9E2053EC-A1E5-4080-9658-A14304B76A9E} = {D5D05332-EF23-4B5F-BABD-2BA89269A2D8}
 		{982ADEED-52C5-4BD2-89F9-C9CA7107F9F1} = {D5D05332-EF23-4B5F-BABD-2BA89269A2D8}
+		{39D03A58-7012-45AA-A9E7-3026A397F7C0} = {8900F796-2BAF-49B8-9BB4-D54A029ABCE3}
+		{7E6A30F6-D79A-4406-9152-C05181069B35} = {8900F796-2BAF-49B8-9BB4-D54A029ABCE3}
+		{A76DC8DA-5292-4E57-A01C-C64813502DD2} = {CBA8ABDF-0E7D-468C-954D-A4B4B08659B4}
+		{30FCF629-42D1-4558-A221-12C26CFC71F6} = {CBA8ABDF-0E7D-468C-954D-A4B4B08659B4}
+		{341E9291-FC3F-4F64-BBF8-B4D21E987990} = {22E36355-4D54-4914-8380-882D1F47E9D8}
+		{3C0AF4EE-26FE-4E8E-A43D-B610B950B184} = {22E36355-4D54-4914-8380-882D1F47E9D8}
+		{F658BA2C-10F9-411E-953E-1019E2E11283} = {BFF9ADE0-DE2E-4ADA-A7F2-E5EA27B42D82}
+		{7684B167-917D-475B-A65A-292188674ECF} = {BFF9ADE0-DE2E-4ADA-A7F2-E5EA27B42D82}
 	EndGlobalSection
 EndGlobal
