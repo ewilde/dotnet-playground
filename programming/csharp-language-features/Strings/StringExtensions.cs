@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Edward.Wilde.CSharp.Features.Strings
 {
@@ -91,6 +92,20 @@ namespace Edward.Wilde.CSharp.Features.Strings
             default:
                 return source.Contains(value);
             }
+        }
+
+        private static readonly ThreadLocal<Random> Random = new ThreadLocal<Random>(() => new Random((int)DateTime.Now.Ticks));
+
+        public static string RandomString(int size)
+        {
+            var builder = new StringBuilder();
+            for (int i = 0; i < size; i++)
+            {
+                var ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * Random.Value.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+
+            return builder.ToString();
         }
     }
 }
