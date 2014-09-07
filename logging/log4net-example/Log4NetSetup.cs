@@ -10,6 +10,12 @@ namespace log4net_example
     /// 
     /// It tries to find a log4net.xml in the same directory as the current assembly and calls
     /// configure on that.
+    /// 
+    /// This example assumes your log4net.xml will have
+    /// 
+    /// file type="log4net.Util.PatternString" value="${LOCALAPPDATA}\MyApp\Logs\CityIndex.Build.Model-[%processid].log"W
+    /// 
+    /// Note the processid above is to allow multiple instances of the host application
     /// </summary>
     public static class Log4NetSetup
     {

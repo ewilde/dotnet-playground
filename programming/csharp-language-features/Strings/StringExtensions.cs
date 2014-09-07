@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -106,6 +107,12 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
 
             return builder.ToString();
+		}
+		
+        public static string NameWithoutExtension(this string value)
+        {
+            var info = new FileInfo(value);
+            return info.Name.Replace(info.Extension, string.Empty);
         }
     }
 }
