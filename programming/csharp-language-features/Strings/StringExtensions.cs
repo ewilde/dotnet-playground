@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using NUnit.Framework;
 
 namespace Edward.Wilde.CSharp.Features.Strings
 {
@@ -28,6 +30,11 @@ namespace Edward.Wilde.CSharp.Features.Strings
                 return int.Parse(b);
 
             return 0;
+        }
+
+        public static string ToPascalCase(this string source)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(source.ToLower());
         }
 
         public static string PascalCaseToWords(this string source)
@@ -113,6 +120,22 @@ namespace Edward.Wilde.CSharp.Features.Strings
         {
             var info = new FileInfo(value);
             return info.Name.Replace(info.Extension, string.Empty);
+        }
+    }
+
+    [TestFixture]
+    public class StringExtensionsTests
+    {
+        [Test]
+        public void CamelCaseToWords_split_string_into_words_on_each_capital_letter()
+        {
+            Assert.That("MyTestCase".PascalCaseToWords(), Is.EqualTo("My test case"));
+        }
+
+        [Test]
+        public void ToCamelCase()
+        {
+            Assert.That("MARKET.909".ToPascalCase(), Is.EqualTo("Market.909"));
         }
     }
 }
