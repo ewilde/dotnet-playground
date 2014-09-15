@@ -41,13 +41,27 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TIBCO.Rendezvous, Version=1.0.5155.23393, Culture=neutral, PublicKeyToken=1a696d1f90f6158a, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_64\TIBCO.Rendezvous\1.0.5155.23393__1a696d1f90f6158a\TIBCO.Rendezvous.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\..\Windows\assembly\GAC_64\TIBCO.Rendezvous\1.0.5155.23393__1a696d1f90f6158a\TIBCO.Rendezvous.netmodule">
+      <Link>TIBCO.Rendezvous.netmodule</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\..\..\..\tibco\tibrv\8.4\bin\tibrv.dll">
+      <Link>tibrv.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
