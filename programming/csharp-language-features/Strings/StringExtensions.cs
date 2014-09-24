@@ -32,6 +32,16 @@ namespace Edward.Wilde.CSharp.Features.Strings
             return 0;
         }
 
+        public static float ToFloat(this string source)
+        {
+            var raw = ExtractNumber(source);
+
+            if (raw.Length > 0)
+                return float.Parse(raw);
+
+            return 0;
+        }
+
         public static string ToPascalCase(this string source)
         {
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(source.ToLower());
@@ -61,17 +71,28 @@ namespace Edward.Wilde.CSharp.Features.Strings
 
         public static string ExtractVersion(this string source)
         {
-            var result = new StringBuilder();
+            return ExtractNumber(source, allowMultipleDecimalPoints: true);
+        }
 
+        private static string ExtractNumber(string source, bool allowMultipleDecimalPoints=false)
+        {
+            var result = new StringBuilder();
+            var decimalAdded = false;
             for (int i = 0; i < source.Length; i++)
             {
                 var value = source[i];
 
-                if ((!Char.IsDigit(value) && value != '.') && result.Length > 0)
+                var isDecimalPoint = value == '.';
+                if ((!Char.IsDigit(value) && !isDecimalPoint) && result.Length > 0)
                     break;
 
-                if (Char.IsDigit(value) || (value == '.' && result.Length > 0))
+                if (Char.IsDigit(value) || (isDecimalPoint && result.Length > 0 && !decimalAdded))
                 {
+                    if (isDecimalPoint && !allowMultipleDecimalPoints)
+                    {
+                        decimalAdded = true;
+                    }
+
                     result.Append(value);
                 }
             }
@@ -136,6 +157,30 @@ namespace Edward.Wilde.CSharp.Features.Strings
         public void ToCamelCase()
         {
             Assert.That("MARKET.909".ToPascalCase(), Is.EqualTo("Market.909"));
+        }
+
+        [Test]
+        public void ExtractVersion()
+        {
+            Assert.That("v4.5".ExtractVersion(), Is.EqualTo("4.5"));
+        }
+
+        [Test]
+        public void ExtractVersionMultipleDecimalPoints()
+        {
+            Assert.That("v4.5.1".ExtractVersion(), Is.EqualTo("4.5.1"));
+        }
+
+        [Test]
+        public void ToFloat()
+        {
+            Assert.That("v4.5".ToFloat(), Is.EqualTo(4.5f));
+        }
+
+        [Test]
+        public void ToFloatMultipleDecimalPoints()
+        {
+            Assert.That("v4.5.1".ToFloat(), Is.EqualTo(4.51f));
         }
     }
 }
