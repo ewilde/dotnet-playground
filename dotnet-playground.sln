@@ -113,6 +113,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apollo-perf-producer", "messaging\apollo\performance-test\apollo-perf-producer\apollo-perf-producer.csproj", "{B0303E30-FAB8-48A7-B37D-D2377D4A02CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "zeromq", "zeromq", "{B59B99E4-21FB-4CDD-843C-0491F52DC966}"
+	ProjectSection(SolutionItems) = preProject
+		messaging\zeromq\README.md = messaging\zeromq\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zeromq-perf-consumer", "messaging\zeromq\performance-test\zeromq-perf-consumer\zeromq-perf-consumer.csproj", "{CDE048ED-5482-4A37-A53B-D1EB23C8710F}"
 EndProject
