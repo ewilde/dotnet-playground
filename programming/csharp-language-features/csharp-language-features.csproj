@@ -89,6 +89,7 @@
     <Compile Include="Interview Questions\StackQuestions.cs" />
     <Compile Include="Interview Questions\StringQuestions.cs" />
     <Compile Include="Interview Questions\ThreadingQuestions.cs" />
+    <Compile Include="Model\Price.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,7 +109,8 @@
     <Compile Include="Querying\net 3\Linq_query_expressions.cs" />
     <Compile Include="Querying\net 3\Linq_sql.cs" />
     <Compile Include="Querying\net 3\Linq_to_xml.cs" />
-    <Compile Include="ReactiveExtensions\Rx_1_subject.cs" />
+    <Compile Include="ReactiveExtensions\Rx_1_Subject.cs" />
+    <Compile Include="ReactiveExtensions\Rx_2_ReplaySubject.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />

@@ -31,6 +31,8 @@ namespace Edward.Wilde.CSharp.Features
             new Linq_sql().Run();
 
             new Rx_SubjectSimpleExample().Run();
+            new Rx_2_ReplaySubject(cacheSize:1).Run();
+            new Rx_2_ReplaySubject(cacheSize:10).Run();
             Console.ReadKey();
 
         }

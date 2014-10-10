@@ -5,6 +5,7 @@ using System.Reactive.Subjects;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Edward.Wilde.CSharp.Features.Utilities;
 using NUnit.Framework;
 
 namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
@@ -17,7 +18,7 @@ namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
     {
         public void Run()
         {
-            Console.WriteLine("Rx examples");
+            ConsoleUtility.PrintSuccess("Rx Subject example");
             var topic = new Subject<string>();
             PrintObject(topic);
 
