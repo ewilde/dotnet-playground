@@ -2,6 +2,7 @@
 
 using Edward.Wilde.CSharp.Features.Querying;
 using Edward.Wilde.CSharp.Features.Querying.net_3;
+using Edward.Wilde.CSharp.Features.ReactiveExtensions;
 using Edward.Wilde.CSharp.Features.Sorting;
 using Edward.Wilde.CSharp.Features.Utilities;
 
@@ -29,6 +30,7 @@ namespace Edward.Wilde.CSharp.Features
             new Linq_to_xml().Run();
             new Linq_sql().Run();
 
+            new Rx_SubjectSimpleExample().Run();
             Console.ReadKey();
 
         }

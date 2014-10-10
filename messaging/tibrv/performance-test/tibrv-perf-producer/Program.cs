@@ -37,8 +37,6 @@ namespace tibrv.perf.producer
                     sendMessages = 0;
                 }
             }
-
-            TIBCO.Rendezvous.Environment.Close();
         }
     }
 }
