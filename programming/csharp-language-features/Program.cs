@@ -37,6 +37,8 @@ namespace Edward.Wilde.CSharp.Features
             new Rx_4_Subscribe_with_error_handling().Run();
             new Rx_5_Unsubsribe_using_dispose().Run();
             new Rx_6_Disposables().Run();
+            new Rx_7_Observable_Create().Run();
+            new Rx_7_Observable_Create().Run_not_preferred();
             Console.ReadKey();
 
         }
