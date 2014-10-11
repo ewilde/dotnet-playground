@@ -112,6 +112,7 @@
     <Compile Include="ReactiveExtensions\Rx_1_Subject.cs" />
     <Compile Include="ReactiveExtensions\Rx_2_ReplaySubject.cs" />
     <Compile Include="ReactiveExtensions\Rx_3_AsyncSubject.cs" />
+    <Compile Include="ReactiveExtensions\Rx_4_Subscribe_with_error_handling.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />

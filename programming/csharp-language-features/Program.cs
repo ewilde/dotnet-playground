@@ -34,6 +34,8 @@ namespace Edward.Wilde.CSharp.Features
             new Rx_2_ReplaySubject(cacheSize:1).Run();
             new Rx_2_ReplaySubject(cacheSize:10).Run();
             new Rx_3_AsyncSubject().Run();
+            new Rx_4_Subscribe_with_error_handling().Run();
+
             Console.ReadKey();
 
         }
