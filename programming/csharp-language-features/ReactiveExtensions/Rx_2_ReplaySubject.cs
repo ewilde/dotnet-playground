@@ -9,6 +9,10 @@ using Edward.Wilde.CSharp.Features.Utilities;
 
 namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
 {
+    /// <summary>
+    /// <see cref="ReplaySubject{T}"/> buffers all published items in the sequence, and will replay them 
+    /// when a consumer subscribes.
+    /// </summary>
     class Rx_2_ReplaySubject
     {
         private int cacheSize;
