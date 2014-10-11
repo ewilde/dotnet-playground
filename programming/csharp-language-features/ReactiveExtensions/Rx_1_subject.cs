@@ -19,6 +19,7 @@ namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
         public void Run()
         {
             ConsoleUtility.PrintSuccess("Rx Subject example");
+            
             var topic = new Subject<string>();
             PrintObject(topic);
 

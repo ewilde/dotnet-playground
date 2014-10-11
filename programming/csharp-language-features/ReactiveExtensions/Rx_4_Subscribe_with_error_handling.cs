@@ -13,6 +13,8 @@ namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
     {
         public void Run()
         {
+            ConsoleUtility.PrintSuccess(string.Format("Rx unsubcribe example"));
+
             var topic = new Subject<Price>();
 
             topic.Subscribe(price => Console.WriteLine(price.ToString()),
