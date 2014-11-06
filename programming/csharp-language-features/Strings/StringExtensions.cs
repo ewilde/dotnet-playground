@@ -10,6 +10,9 @@ namespace Edward.Wilde.CSharp.Features.Strings
 {
     public static class StringExtensions
     {
+        private static readonly ThreadLocal<Random> Random =
+            new ThreadLocal<Random>(() => new Random((int) DateTime.Now.Ticks));
+
         public static bool StartsWithNumber(this string source)
         {
             return Char.IsDigit(source.ToCharArray()[0]);
@@ -34,7 +37,7 @@ namespace Edward.Wilde.CSharp.Features.Strings
 
         public static float ToFloat(this string source)
         {
-            var raw = ExtractNumber(source);
+            string raw = ExtractNumber(source);
 
             if (raw.Length > 0)
                 return float.Parse(raw);
@@ -50,9 +53,9 @@ namespace Edward.Wilde.CSharp.Features.Strings
         public static string PascalCaseToWords(this string source)
         {
             var sb = new StringBuilder();
-            var firstWord = true;
+            bool firstWord = true;
 
-            foreach (var match in Regex.Matches(source, "([A-Z][a-z]+)|[0-9]+"))
+            foreach (object match in Regex.Matches(source, "([A-Z][a-z]+)|[0-9]+"))
             {
                 if (firstWord)
                 {
@@ -74,15 +77,15 @@ namespace Edward.Wilde.CSharp.Features.Strings
             return ExtractNumber(source, allowMultipleDecimalPoints: true);
         }
 
-        private static string ExtractNumber(string source, bool allowMultipleDecimalPoints=false)
+        private static string ExtractNumber(string source, bool allowMultipleDecimalPoints = false)
         {
             var result = new StringBuilder();
-            var decimalAdded = false;
+            bool decimalAdded = false;
             for (int i = 0; i < source.Length; i++)
             {
-                var value = source[i];
+                char value = source[i];
 
-                var isDecimalPoint = value == '.';
+                bool isDecimalPoint = value == '.';
                 if ((!Char.IsDigit(value) && !isDecimalPoint) && result.Length > 0)
                     break;
 
@@ -104,39 +107,57 @@ namespace Edward.Wilde.CSharp.Features.Strings
         {
             switch (comparison)
             {
-            case StringComparison.CurrentCultureIgnoreCase:
-            case StringComparison.InvariantCultureIgnoreCase:
-            case StringComparison.OrdinalIgnoreCase:
-                if (source == null)
-                {
-                    return false;
-                }
+                case StringComparison.CurrentCultureIgnoreCase:
+                case StringComparison.InvariantCultureIgnoreCase:
+                case StringComparison.OrdinalIgnoreCase:
+                    if (source == null)
+                    {
+                        return false;
+                    }
 
-                if (value == null)
-                {
-                    return false;
-                }
+                    if (value == null)
+                    {
+                        return false;
+                    }
 
-                return source.ToLower().Contains(value.ToLower());
-            default:
-                return source.Contains(value);
+                    return source.ToLower().Contains(value.ToLower());
+                default:
+                    return source.Contains(value);
             }
         }
-
-        private static readonly ThreadLocal<Random> Random = new ThreadLocal<Random>(() => new Random((int)DateTime.Now.Ticks));
 
         public static string RandomString(int size)
         {
             var builder = new StringBuilder();
             for (int i = 0; i < size; i++)
             {
-                var ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * Random.Value.NextDouble() + 65)));
+                char ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26*Random.Value.NextDouble() + 65)));
                 builder.Append(ch);
             }
 
             return builder.ToString();
-		}
-		
+        }
+
+        public static string Replace(this string value, string oldValue, string newValue, StringComparison comparison)
+        {
+            var sb = new StringBuilder();
+
+            int previousIndex = 0;
+            int index = value.IndexOf(oldValue, comparison);
+            while (index != -1)
+            {
+                sb.Append(value.Substring(previousIndex, index - previousIndex));
+                sb.Append(newValue);
+                index += oldValue.Length;
+
+                previousIndex = index;
+                index = value.IndexOf(oldValue, index, comparison);
+            }
+            sb.Append(value.Substring(previousIndex));
+
+            return sb.ToString();
+        }
+
         public static string NameWithoutExtension(this string value)
         {
             var info = new FileInfo(value);
@@ -154,12 +175,6 @@ namespace Edward.Wilde.CSharp.Features.Strings
         }
 
         [Test]
-        public void ToCamelCase()
-        {
-            Assert.That("MARKET.909".ToPascalCase(), Is.EqualTo("Market.909"));
-        }
-
-        [Test]
         public void ExtractVersion()
         {
             Assert.That("v4.5".ExtractVersion(), Is.EqualTo("4.5"));
@@ -172,6 +187,12 @@ namespace Edward.Wilde.CSharp.Features.Strings
         }
 
         [Test]
+        public void ToCamelCase()
+        {
+            Assert.That("MARKET.909".ToPascalCase(), Is.EqualTo("Market.909"));
+        }
+
+        [Test]
         public void ToFloat()
         {
             Assert.That("v4.5".ToFloat(), Is.EqualTo(4.5f));
@@ -181,6 +202,13 @@ namespace Edward.Wilde.CSharp.Features.Strings
         public void ToFloatMultipleDecimalPoints()
         {
             Assert.That("v4.5.1".ToFloat(), Is.EqualTo(4.51f));
+        }
+
+        [Test]
+        public void Replace()
+        {
+            Assert.That("TheMouseRanUpThe Hill VeryQuickly".Replace("upthe hill", "down the hill", StringComparison.InvariantCultureIgnoreCase),
+                Is.EqualTo("TheMouseRandown the hill VeryQuickly"));
         }
     }
 }
