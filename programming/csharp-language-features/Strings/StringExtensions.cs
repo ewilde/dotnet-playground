@@ -77,6 +77,29 @@ namespace Edward.Wilde.CSharp.Features.Strings
             return ExtractNumber(source, allowMultipleDecimalPoints: true);
         }
 
+        public static bool Contains(this string source, string value, StringComparison comparison)
+        {
+            switch (comparison)
+            {
+                case StringComparison.CurrentCultureIgnoreCase:
+                case StringComparison.InvariantCultureIgnoreCase:
+                case StringComparison.OrdinalIgnoreCase:
+                    if (source == null)
+                    {
+                        return false;
+                    }
+
+                    if (value == null)
+                    {
+                        return false;
+                    }
+
+                    return source.ToLower().Contains(value.ToLower());
+                default:
+                    return source.Contains(value);
+            }
+        }
+
         private static string ExtractNumber(string source, bool allowMultipleDecimalPoints = false)
         {
             var result = new StringBuilder();
@@ -101,29 +124,6 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
 
             return result.ToString().TrimEnd('.');
-        }
-
-        public static bool Contains(this string source, string value, StringComparison comparison)
-        {
-            switch (comparison)
-            {
-                case StringComparison.CurrentCultureIgnoreCase:
-                case StringComparison.InvariantCultureIgnoreCase:
-                case StringComparison.OrdinalIgnoreCase:
-                    if (source == null)
-                    {
-                        return false;
-                    }
-
-                    if (value == null)
-                    {
-                        return false;
-                    }
-
-                    return source.ToLower().Contains(value.ToLower());
-                default:
-                    return source.Contains(value);
-            }
         }
 
         public static string RandomString(int size)
@@ -156,6 +156,12 @@ namespace Edward.Wilde.CSharp.Features.Strings
             sb.Append(value.Substring(previousIndex));
 
             return sb.ToString();
+        }
+
+        public static string FileNameExtension(this string value)
+        {
+            var info = new FileInfo(value);
+            return info.Extension;
         }
 
         public static string NameWithoutExtension(this string value)
