@@ -128,6 +128,7 @@
     <Compile Include="Strings\StringExtensions.cs" />
     <Compile Include="System\Console.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
+    <Compile Include="Utilities\FileInfoExtensions.cs" />
     <Compile Include="Utilities\FrameworkUtility.cs" />
     <Compile Include="Utilities\IEnumerableExtensions.cs" />
     <Compile Include="Utilities\IntegerExtensions.cs" />
