@@ -24,7 +24,7 @@ namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
         {
             ConsoleUtility.PrintSuccess(string.Format("Observable create example"));
 
-            var topic = Observable.Create((IObserver<Price> consumer) =>
+            var topic = Observable.Create<Price>(consumer =>
             {
                 consumer.OnNext(new Price(10, 1, 2, 3));
                 return Disposable.Create(() => Console.WriteLine("Consumer has unsubscribed"));
@@ -36,6 +36,39 @@ namespace Edward.Wilde.CSharp.Features.ReactiveExtensions
             }
 
             Console.WriteLine("Finished");
+        }
+
+        public void Run_empty()
+        {
+            ConsoleUtility.PrintSuccess(string.Format("Observable Empty example"));
+            var topic = Observable.Empty<string>();
+            using (topic.Subscribe(
+                s => Console.WriteLine("OnNext: " + s),
+                e => ConsoleUtility.PrintError(e.ToString()),
+                () => Console.WriteLine("Completed")))
+            { }
+        }
+
+        public void Run_return()
+        {
+            ConsoleUtility.PrintSuccess(string.Format("Observable Return example"));
+            var topic = Observable.Return("First and only item");
+            using (topic.Subscribe(
+                s => Console.WriteLine("OnNext: " + s), 
+                e => ConsoleUtility.PrintError(e.ToString()),
+                () => Console.WriteLine("Completed")))
+            { }
+        }
+
+        public void Run_throw()
+        {
+            ConsoleUtility.PrintSuccess(string.Format("Observable Throw example"));
+            var topic = Observable.Throw<string>(new Exception("Error from observable"));
+            using (topic.Subscribe(
+                s => Console.WriteLine("OnNext: " + s),
+                e => ConsoleUtility.PrintError(e.ToString()),
+                () => Console.WriteLine("Completed")))
+            { }
         }
 
         public void Run_not_preferred()

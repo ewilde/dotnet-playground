@@ -14,20 +14,6 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -109,13 +95,20 @@
     <Compile Include="Querying\net 3\Linq_query_expressions.cs" />
     <Compile Include="Querying\net 3\Linq_sql.cs" />
     <Compile Include="Querying\net 3\Linq_to_xml.cs" />
-    <Compile Include="ReactiveExtensions\Rx_1_Subject.cs" />
-    <Compile Include="ReactiveExtensions\Rx_2_ReplaySubject.cs" />
-    <Compile Include="ReactiveExtensions\Rx_3_AsyncSubject.cs" />
-    <Compile Include="ReactiveExtensions\Rx_4_Subscribe_with_error_handling.cs" />
-    <Compile Include="ReactiveExtensions\Rx_5_Unsubsribe_using_dispose.cs" />
-    <Compile Include="ReactiveExtensions\Rx_6_Disposables.cs" />
-    <Compile Include="ReactiveExtensions\Rx_7_Observable_Create.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_1_Subject.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_2_ReplaySubject.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_3_AsyncSubject.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_4_Subscribe_with_error_handling.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_5_Unsubsribe_using_dispose.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_6_Disposables.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_7_Observable_Create.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_7_Observable_Create_WithTimer.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_8_Observable_Range.cs" />
+    <Compile Include="ReactiveExtensions\1. Basic Types\Rx_9_Observable_Generate.cs" />
+    <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_2_Distinct.cs" />
+    <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_1_Where.cs" />
+    <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_3_Skip_and_Take.cs" />
+    <Compile Include="ReactiveExtensions\3. Inspections\Rx_inspections_1_any.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />

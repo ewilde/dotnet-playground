@@ -3,6 +3,8 @@
 using Edward.Wilde.CSharp.Features.Querying;
 using Edward.Wilde.CSharp.Features.Querying.net_3;
 using Edward.Wilde.CSharp.Features.ReactiveExtensions;
+using Edward.Wilde.CSharp.Features.ReactiveExtensions.Sequence_basics;
+using Edward.Wilde.CSharp.Features.ReactiveExtensions._3._Inspections;
 using Edward.Wilde.CSharp.Features.Sorting;
 using Edward.Wilde.CSharp.Features.Utilities;
 
@@ -39,6 +41,29 @@ namespace Edward.Wilde.CSharp.Features
             new Rx_6_Disposables().Run();
             new Rx_7_Observable_Create().Run();
             new Rx_7_Observable_Create().Run_not_preferred();
+            new Rx_7_Observable_Create().Run_empty();
+            new Rx_7_Observable_Create().Run_return();
+            new Rx_7_Observable_Create().Run_throw();
+            new Rx_7_Observable_Create_WithTimer().Run();
+            new Rx_8_Observable_Range().Run();
+            new Rx_9_Observable_Generate().Run();
+            new Rx_9_Observable_Generate().Run_interval_based();
+            
+            new Rx_seq_1_Where().Run();
+            new Rx_seq_2_Distinct().Run_Distinct();
+            new Rx_seq_2_Distinct().Run_Distinct_Until_Changed();
+
+            var skipExamples = new Rx_seq_3_Skip_and_Take();
+            skipExamples.Skip();
+            skipExamples.Take();
+            skipExamples.SkipWhile();
+            skipExamples.TakeWhile();
+            skipExamples.SkipLast();
+            skipExamples.TakeLast();
+
+            new Rx_inspections_1_any().Any();
+
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
 
         }
