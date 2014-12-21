@@ -108,6 +108,7 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
 
             int removed = 0;
+            string result = value;
             for (int i = 0; i < value.Length; i++)
             {
                 if (value[i] != character)
@@ -120,10 +121,11 @@ namespace Edward.Wilde.CSharp.Features.Strings
                     break;
                 }
 
-                value = value.Substring(1);
+                removed += 1;
+                result = result.Substring(1);
             }
 
-            return value;
+            return result;
         }
 
         public static int PadCountLeft(this string value)
