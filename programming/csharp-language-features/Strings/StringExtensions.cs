@@ -100,6 +100,32 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
         }
 
+        public static string Trim(this string value, char character, int count)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            int removed = 0;
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (value[i] != character)
+                {
+                    break;
+                }
+
+                if (removed >= count)
+                {
+                    break;
+                }
+
+                value = value.Substring(1);
+            }
+
+            return value;
+        }
+
         public static int PadCountLeft(this string value)
         {
             if (string.IsNullOrEmpty(value))
@@ -244,6 +270,12 @@ namespace Edward.Wilde.CSharp.Features.Strings
         public void Padding()
         {
             Assert.That("    Padding the margin with whitespace    ".PadCountLeft(), Is.EqualTo(4));
+        }
+
+        [Test]
+        public void Trim()
+        {
+            Assert.That("    Padding the margin with whitespace    ".Trim(' ', 2), Is.EqualTo("  Padding the margin with whitespace    "));
         }
     }
 }
