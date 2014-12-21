@@ -100,6 +100,31 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
         }
 
+        public static int PadCountLeft(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+
+            int padding = 0;
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (char.IsWhiteSpace(value[i]))
+                {
+                    padding += 1;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return padding;
+
+            return padding;
+        }
+
         private static string ExtractNumber(string source, bool allowMultipleDecimalPoints = false)
         {
             var result = new StringBuilder();
@@ -215,6 +240,12 @@ namespace Edward.Wilde.CSharp.Features.Strings
         {
             Assert.That("TheMouseRanUpThe Hill VeryQuickly".Replace("upthe hill", "down the hill", StringComparison.InvariantCultureIgnoreCase),
                 Is.EqualTo("TheMouseRandown the hill VeryQuickly"));
+        }
+
+        [Test]
+        public void Padding()
+        {
+            Assert.That("    Padding the margin with whitespace    ".PadCountLeft(), Is.EqualTo(4));
         }
     }
 }
