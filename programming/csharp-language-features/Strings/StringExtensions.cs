@@ -121,8 +121,6 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
 
             return padding;
-
-            return padding;
         }
 
         private static string ExtractNumber(string source, bool allowMultipleDecimalPoints = false)
