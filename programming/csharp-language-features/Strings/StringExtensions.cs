@@ -100,6 +100,57 @@ namespace Edward.Wilde.CSharp.Features.Strings
             }
         }
 
+        public static string Trim(this string value, char character, int count)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            int removed = 0;
+            string result = value;
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (value[i] != character)
+                {
+                    break;
+                }
+
+                if (removed >= count)
+                {
+                    break;
+                }
+
+                removed += 1;
+                result = result.Substring(1);
+            }
+
+            return result;
+        }
+
+        public static int PadCountLeft(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+
+            int padding = 0;
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (char.IsWhiteSpace(value[i]))
+                {
+                    padding += 1;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return padding;
+        }
+
         private static string ExtractNumber(string source, bool allowMultipleDecimalPoints = false)
         {
             var result = new StringBuilder();
@@ -215,6 +266,18 @@ namespace Edward.Wilde.CSharp.Features.Strings
         {
             Assert.That("TheMouseRanUpThe Hill VeryQuickly".Replace("upthe hill", "down the hill", StringComparison.InvariantCultureIgnoreCase),
                 Is.EqualTo("TheMouseRandown the hill VeryQuickly"));
+        }
+
+        [Test]
+        public void Padding()
+        {
+            Assert.That("    Padding the margin with whitespace    ".PadCountLeft(), Is.EqualTo(4));
+        }
+
+        [Test]
+        public void Trim()
+        {
+            Assert.That("    Padding the margin with whitespace    ".Trim(' ', 2), Is.EqualTo("  Padding the margin with whitespace    "));
         }
     }
 }

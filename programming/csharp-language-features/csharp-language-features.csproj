@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
@@ -128,7 +131,9 @@
     <Compile Include="Strings\StringExtensions.cs" />
     <Compile Include="System\Console.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
+    <Compile Include="Utilities\DirectoryUtility.cs" />
     <Compile Include="Utilities\FileInfoExtensions.cs" />
+    <Compile Include="Utilities\FileUtility.cs" />
     <Compile Include="Utilities\FrameworkUtility.cs" />
     <Compile Include="Utilities\IEnumerableExtensions.cs" />
     <Compile Include="Utilities\IntegerExtensions.cs" />
