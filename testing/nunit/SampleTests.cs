@@ -3,6 +3,9 @@
 // Copyright (c) 2014.
 // </copyright>
 // -----------------------------------------------------------------------
+
+using System;
+
 namespace nunit.example
 {
     using System.Diagnostics;
@@ -51,6 +54,23 @@ namespace nunit.example
         {
             var product = new Product("Bean", 15.5m);
             Assert.That(product.Name, Is.EqualTo("Bean"));
+        }
+
+        [Test]
+        public void asserting_for_an_exception()
+        {
+            Assert.Throws<NullReferenceException>(() =>
+            {
+                object foo = null;
+                foo.ToString();
+            });
+        }    
+
+        [Test, ExpectedException(typeof(NullReferenceException))]
+        public void asserting_for_an_exception_using_an_attribute()
+        {
+            object foo = null;
+            foo.ToString();            
         }
     }
 }
