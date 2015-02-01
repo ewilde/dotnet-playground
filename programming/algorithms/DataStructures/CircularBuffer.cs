@@ -73,6 +73,15 @@ namespace algorithms.DataStructures
             private T[] _array;
             private int _start;
             private int _end;
+
+            internal CircularBufferEnumerator(CircularBuffer<T> circularBuffer)
+            {
+                this._array = circularBuffer.buffer;
+                this._start = 0;
+                this._end = circularBuffer.Count;
+                this._current = this._start - 1;
+            }
+
             private int _current;
 
             public T Current
@@ -94,14 +103,6 @@ namespace algorithms.DataStructures
                 {
                     return (object)this.Current;
                 }
-            }
-
-            internal CircularBufferEnumerator(CircularBuffer<T> circularBuffer)
-            {
-                this._array = circularBuffer.buffer;
-                this._start = 0;
-                this._end = circularBuffer.Count;
-                this._current = this._start - 1;
             }
 
             public bool MoveNext()

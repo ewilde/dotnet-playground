@@ -4,14 +4,14 @@ namespace log4net_example
 {
     public class Employee
     {
-        private static readonly ILog _log = LogManager.GetLogger(typeof(Employee));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Employee));
     
         public Employee() 
         {
-            _log.Debug("Employee constructor called.");
-            if (_log.IsDebugEnabled)
+            Log.Debug("Employee constructor called.");
+            if (Log.IsDebugEnabled)
             {
-                _log.DebugFormat("Logging thing with expensive tostring lookup {0}", "That took a long time");
+                Log.DebugFormat("Logging thing with expensive tostring lookup {0}", "That took a long time");
             }            
         }
     }

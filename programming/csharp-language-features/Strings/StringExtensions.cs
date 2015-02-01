@@ -182,7 +182,9 @@ namespace Edward.Wilde.CSharp.Features.Strings
             var builder = new StringBuilder();
             for (int i = 0; i < size; i++)
             {
-                char ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26*Random.Value.NextDouble() + 65)));
+                double nextDouble;
+                nextDouble = Random.Value.NextDouble();
+                char ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26*nextDouble + 65)));
                 builder.Append(ch);
             }
 
