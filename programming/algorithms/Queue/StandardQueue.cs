@@ -14,23 +14,23 @@ namespace algorithms.Queue
     /// </summary>
     public class StandardQueue<T>
     {
-        private readonly LinkedList<T> data;
+        private readonly LinkedList<T> _data;
 
         public StandardQueue()
         {
-            this.data = new LinkedList<T>();
+            this._data = new LinkedList<T>();
         }
 
-        public StandardQueue<T> Enque(T item)
+        public StandardQueue<T> Enqueue(T item)
         {
-            this.data.AddLast(item);
+            this._data.AddLast(item);
             return this;
         }
 
-        public T Deque()
+        public T Dequeue()
         {
-            var item = this.data.First;
-            this.data.RemoveFirst();
+            var item = this._data.First;
+            this._data.RemoveFirst();
             return item.Value;
         }
     }
@@ -44,18 +44,18 @@ namespace algorithms.Queue
         public void Enqueuing_returns_queue()
         {
             var queue = new StandardQueue<int>();
-            Assert.That(queue.Enque(3), Is.EqualTo(queue));
+            Assert.That(queue.Enqueue(3), Is.EqualTo(queue));
         }
 
         [Test]
         public void Dequeuing_returns_enqueued_item_in_fifo_order()
         {
             var queue = new StandardQueue<int>();
-            queue.Enque(3).Enque(2).Enque(1);
+            queue.Enqueue(3).Enqueue(2).Enqueue(1);
 
-            Assert.That(queue.Deque(), Is.EqualTo(3));
-            Assert.That(queue.Deque(), Is.EqualTo(2));
-            Assert.That(queue.Deque(), Is.EqualTo(1));
+            Assert.That(queue.Dequeue(), Is.EqualTo(3));
+            Assert.That(queue.Dequeue(), Is.EqualTo(2));
+            Assert.That(queue.Dequeue(), Is.EqualTo(1));
         }
     }
 
