@@ -129,6 +129,7 @@
     <Compile Include="Sorting\net 3.5\Sorting_in_net3_5.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Strings\StringExtensions.cs" />
+    <Compile Include="Strings\StringFormatting.cs" />
     <Compile Include="System\Console.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
     <Compile Include="Utilities\DirectoryUtility.cs" />
