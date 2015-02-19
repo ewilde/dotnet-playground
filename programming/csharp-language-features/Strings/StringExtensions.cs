@@ -151,6 +151,16 @@ namespace Edward.Wilde.CSharp.Features.Strings
             return padding;
         }
 
+        public static string[] Lines(this string value)
+        {
+            if (value == null)
+            {
+                return new string[] { };
+            }
+
+            return value.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+        }
+
         private static string ExtractNumber(string source, bool allowMultipleDecimalPoints = false)
         {
             var result = new StringBuilder();
