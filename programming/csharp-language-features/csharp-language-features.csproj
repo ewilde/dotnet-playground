@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delegates\Example_using_delegates.cs" />
+    <Compile Include="Diagnostics\PerformanceCounterExamples.cs" />
     <Compile Include="Dispose\DisposableComponent.cs" />
     <Compile Include="Enums\EnumExtensions.cs" />
     <Compile Include="Equality\OverridingEquals.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Utilities\DirectoryUtility.cs" />
     <Compile Include="Utilities\FileInfoExtensions.cs" />
     <Compile Include="Utilities\FileUtility.cs" />
+    <Compile Include="Utilities\FloatExtensions.cs" />
     <Compile Include="Utilities\FrameworkUtility.cs" />
     <Compile Include="Utilities\IEnumerableExtensions.cs" />
     <Compile Include="Utilities\IntegerExtensions.cs" />
