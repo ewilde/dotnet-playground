@@ -119,6 +119,7 @@
     <Compile Include="ReactiveExtensions\Rx_5_Unsubsribe_using_dispose.cs" />
     <Compile Include="ReactiveExtensions\Rx_6_Disposables.cs" />
     <Compile Include="ReactiveExtensions\Rx_7_Observable_Create.cs" />
+    <Compile Include="Security\IIdentityExtensions.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />
