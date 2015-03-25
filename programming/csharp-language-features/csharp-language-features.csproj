@@ -133,6 +133,7 @@
     <Compile Include="Strings\StringExtensions.cs" />
     <Compile Include="Strings\StringFormatting.cs" />
     <Compile Include="System\Console.cs" />
+    <Compile Include="Threading\InterlockExamples.cs" />
     <Compile Include="Timers\HighResolution.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
     <Compile Include="Utilities\DirectoryUtility.cs" />
