@@ -7,6 +7,7 @@ using Edward.Wilde.CSharp.Features.Utilities;
 using Edward.Wilde.CSharp.Features.Utilities.CityIndex.Build.Model.Utility;
 using NUnit.Framework;
 using PerformanceMeasurement;
+using Problem79;
 using QuickGraph;
 using QuickGraph.Algorithms;
 
@@ -178,6 +179,35 @@ namespace algorithms.Puzzles
             File.WriteAllText(temporaryFile, builder.ToString());
             System.Diagnostics.Process.Start(temporaryFile);
             //File.Delete(temporaryFile);
+        }
+
+        [Test]
+        public void Lee_speed_of_alogithm()
+        {
+            var logins = PasscodeDerivation.KeyLog.Lines();
+            
+            StatsCollection result = LinqPadUX.Measure.Action(() => LeeSolution.Compute(logins));
+
+            var builder = new StringBuilder();
+
+            result.WriteReportTable(new StringWriter(builder), 1f);
+
+            var temporaryFile = FileUtility.GetTemporaryFile(".html");
+            File.WriteAllText(temporaryFile, builder.ToString());
+            System.Diagnostics.Process.Start(temporaryFile);
+            //File.Delete(temporaryFile);
+        }
+
+        [Test]
+        public void All_solutions_same()
+        {
+            var logins = PasscodeDerivation.KeyLog.Lines();
+            var edSolution = PasscodeDerivation.ShortestPhrase(logins).ToString();
+            var kevSolution = Week1.Computeaverage(logins);
+            var leeSolution = LeeSolution.Compute(logins);
+
+            Assert.AreEqual(edSolution, kevSolution);
+            Assert.AreEqual(edSolution, leeSolution);
         }
     }
 }
