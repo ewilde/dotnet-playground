@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using log4net;
 using NUnit.Framework;
 
 namespace algorithms.DataStructures
@@ -10,9 +11,11 @@ namespace algorithms.DataStructures
     /// </summary>
     public class BinaryTree<T>
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(BinaryTree<T>));
+
         public Node<T> Root { get; set; }
 
-        public void DepthOrderTraversal(Action<Node<T>> callback)
+        public void DepthFirst_PreOrder_Traversal_Iterative(Action<Node<T>> callback)
         {
             var stack = new Stack<Node<T>>();
             stack.Push(this.Root);
@@ -27,6 +30,62 @@ namespace algorithms.DataStructures
 
                 if (node.Left != null)
                     stack.Push(node.Left);
+            }
+        }
+
+        public void DepthFirst_InOrder_Traversal_Iterative(Action<Node<T>> callback)
+        {
+            var stack = new Stack<Node<T>>();
+            var node = Root;
+            while (stack.Count > 0 || node != null)
+            {
+                if (node != null)
+                {
+                    stack.Push(node);
+                    node = node.Left;
+                }
+                else
+                {
+                    node = stack.Pop();
+                    callback(node);
+                    node = node.Right;
+                }
+            }
+        }
+
+        public void Root_to_leaf_traversal(Action<Tuple<string, Node<T>>> callback)
+        {
+            var root = Root;
+            if (root == null) {
+                return;
+            }
+
+            var q = new Queue<Tuple<string, Node<T>>>();
+            q.Enqueue(new Tuple<string, Node<T>>(root.Value.ToString(),root));
+            
+            while (q.Count > 0)
+            {
+                var value =q.Dequeue();
+                var head = value.Item2;
+                var headPath = value.Item1;
+
+                if (head.Leaf)
+                {
+                    callback(value);
+                    continue;
+                }
+
+                if (head.Left != null)
+                {
+                    String leftStr = headPath + "->" + head.Left.Value;
+                    q.Enqueue(new Tuple<string, Node<T>>(leftStr, head.Left));                    
+                }
+
+                if (head.Right != null)
+                {
+                    String rightStr = headPath + "->" + head.Right.Value;
+                    q.Enqueue(new Tuple<string, Node<T>>(rightStr, head.Right));                    
+                }
             }
         }
     }
@@ -48,19 +107,75 @@ namespace algorithms.DataStructures
         public T Value { get; set; } 
         public Node<T> Left { get; set; }
         public Node<T> Right { get; set; }
+
+        public bool Leaf
+        {
+            get
+            {
+                return Left == null && Right == null;
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Value: {0}, Left: {1}, Right: {2}, Leaf: {3}", Value, Left, Right, Leaf);
+        }
     }
 
     [TestFixture]
     public class BinaryTreeTest
     {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(BinaryTreeTest));
+
+        /// <summary>
+        ///             1
+        ///          /    \
+        ///         2      3
+        ///        / \     /
+        ///       4   10  5
+        /// </summary>
+        /// <see cref="http://en.wikipedia.org/wiki/Tree_traversal#Types"/>
         [Test]
-        public void DepthOrderTraversal()
+        public void DepthFirst_PreOrder_Traversal_Iterative()
         {
             var traversed = new List<int>();
-            this.CreateTree().DepthOrderTraversal(node=>traversed.Add(node.Value));
+            this.CreateTree().DepthFirst_PreOrder_Traversal_Iterative(node=>traversed.Add(node.Value));
 
-            Assert.That(traversed, Is.EquivalentTo(new[] { 1,2,4,10,3,5}));
+            Assert.That(traversed, Is.EquivalentTo(new[] {1, 2, 4, 10, 3, 5}));
 
+        }
+
+        /// <summary>
+        ///             1
+        ///          /    \
+        ///         2      3
+        ///        / \     /
+        ///       4   10  5
+        /// </summary>
+        /// <see cref="http://en.wikipedia.org/wiki/Tree_traversal#Types"/>
+        [Test]
+        public void DepthFirst_InOrder_Traversal_Iterative()
+        {
+            var traversed = new List<int>();
+            this.CreateTree().DepthFirst_InOrder_Traversal_Iterative(node => traversed.Add(node.Value));
+
+            Assert.That(traversed.ToArray(), Is.EqualTo(new int[] { 4, 2, 10, 1, 5, 3}));
+
+        }
+
+        /// <summary>
+        ///             1
+        ///          /    \
+        ///         2      3
+        ///        / \     /
+        ///       4   10  5
+        /// </summary>
+        /// <see cref="http://en.wikipedia.org/wiki/Tree_traversal#Types"/>
+        [Test]
+        public void Print_all_Paths_from_root_to_leaf()
+        {
+            var traversed = new List<int>();
+            this.CreateTree().Root_to_leaf_traversal(tuple => _log.DebugFormat("{0} - {1}", tuple.Item1, tuple.Item2.Value));
         }
 
         public BinaryTree<int> CreateTree()
