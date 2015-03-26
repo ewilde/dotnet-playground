@@ -38,7 +38,7 @@ namespace Edward.Wilde.CSharp.Features.ReactiveExtensions._3._Inspections
                 }
             }, () => subject.OnNext(found));
 
-            subject.IgnoreElements().Subscribe(Action., subscription.Dispose);
+           // subject.IgnoreElements().Subscribe(, subscription.Dispose);
             return subject;
         }
     }
