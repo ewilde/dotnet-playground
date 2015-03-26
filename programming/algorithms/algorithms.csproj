@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -42,21 +43,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\quickgraph\3.0\sources\bin\Debug\QuickGraph.dll</HintPath>
+    <Reference Include="QuickGraph">
+      <HintPath>..\..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
     </Reference>
-    <Reference Include="QuickGraph.Data, Version=3.6.61114.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\quickgraph\3.0\sources\bin\Debug\QuickGraph.Data.dll</HintPath>
+    <Reference Include="QuickGraph.Data">
+      <HintPath>..\..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Data.dll</HintPath>
     </Reference>
-    <Reference Include="QuickGraph.Graphviz, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\quickgraph\3.0\sources\bin\Debug\QuickGraph.Graphviz.dll</HintPath>
+    <Reference Include="QuickGraph.Graphviz">
+      <HintPath>..\..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Graphviz.dll</HintPath>
     </Reference>
-    <Reference Include="QuickGraph.Serialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\quickgraph\3.0\sources\bin\Debug\QuickGraph.Serialization.dll</HintPath>
+    <Reference Include="QuickGraph.Serialization">
+      <HintPath>..\..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -99,6 +96,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\algorithms-fsharp\algorithms-fsharp.fsproj">
+      <Project>{c6c17cbf-416d-4018-b921-927a49ec2cbe}</Project>
+      <Name>algorithms-fsharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\csharp-language-features\csharp-language-features.csproj">
       <Project>{C5C87041-02FA-41E8-8171-2270000474F6}</Project>
       <Name>csharp-language-features</Name>
