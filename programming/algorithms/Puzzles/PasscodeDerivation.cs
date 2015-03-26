@@ -1,9 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Edward.Wilde.CSharp.Features.Strings;
 using Edward.Wilde.CSharp.Features.Utilities;
+using Edward.Wilde.CSharp.Features.Utilities.CityIndex.Build.Model.Utility;
 using NUnit.Framework;
+using PerformanceMeasurement;
 using QuickGraph;
 using QuickGraph.Algorithms;
 
@@ -141,6 +144,23 @@ namespace algorithms.Puzzles
             var logins = PasscodeDerivation.KeyLog.Lines();
 
             Assert.That(PasscodeDerivation.ShortestPhrase(logins), Is.EqualTo(73162890));
+        }
+
+        [Test]
+        public void speed_of_alogithm()
+        {
+            var logins = PasscodeDerivation.KeyLog.Lines();
+
+            StatsCollection result = LinqPadUX.Measure.Action(() => PasscodeDerivation.ShortestPhrase(logins));
+
+            var builder = new StringBuilder();
+            
+            result.WriteReportTable(new StringWriter(builder), 1f);
+
+            var temporaryFile = FileUtility.GetTemporaryFile(".html");
+            File.WriteAllText(temporaryFile,builder.ToString());
+            System.Diagnostics.Process.Start(temporaryFile);
+            //File.Delete(temporaryFile);
         }
     }
 }

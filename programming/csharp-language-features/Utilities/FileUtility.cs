@@ -12,7 +12,10 @@ namespace Edward.Wilde.CSharp.Features.Utilities
 
         public static class FileUtility
         {
-
+            public static string GetTemporaryFile(string extension = null)
+            {
+                return Path.Combine(Path.GetTempPath(), Path.GetRandomFileName()) + extension;                                
+            }
 
             /// <summary>
             /// Copy files combining source directory with each file name to the destination directory
