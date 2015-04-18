@@ -13,6 +13,21 @@ namespace Edward.Wilde.CSharp.Features.Strings
         private static readonly ThreadLocal<Random> Random =
             new ThreadLocal<Random>(() => new Random((int) DateTime.Now.Ticks));
 
+        public static string MaxLength(this string source, int length)
+        {
+            if (source == null)
+            {
+                return null;
+            }
+
+            if (source.Length <= length)
+            {
+                return source;
+            }
+
+            return source.Substring(0, length);
+        }
+
         public static bool StartsWithNumber(this string source)
         {
             return Char.IsDigit(source.ToCharArray()[0]);
@@ -290,6 +305,13 @@ namespace Edward.Wilde.CSharp.Features.Strings
         public void Trim()
         {
             Assert.That("    Padding the margin with whitespace    ".Trim(' ', 2), Is.EqualTo("  Padding the margin with whitespace    "));
+        }
+
+        [Test]
+        public void MaxLength()
+        {
+            Assert.That("123456".MaxLength(2), Is.EqualTo("12"));
+            Assert.That("123456".MaxLength(200), Is.EqualTo("123456"));
         }
     }
 }

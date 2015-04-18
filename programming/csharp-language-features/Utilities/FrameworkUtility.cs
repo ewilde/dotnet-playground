@@ -13,6 +13,7 @@ namespace Edward.Wilde.CSharp.Features.Utilities
         }        
     }
 
+    [TestFixture]
     public class FrameworkUtilityTests
     {
         [Test]
@@ -20,11 +21,7 @@ namespace Edward.Wilde.CSharp.Features.Utilities
         {
             Assert.That(FrameworkUtility.IsNet45OrNewer(), Is.True);
 
-            const int MaxMarketId = 7;
-            for (int i = 0 ; i < 100; i++)
-            {
-                Debug.WriteLine(i%MaxMarketId + 1);
-            }
+            "ed".Substring(0, 123);
         }
     }
 }
