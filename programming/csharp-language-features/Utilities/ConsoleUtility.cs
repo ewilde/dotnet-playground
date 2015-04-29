@@ -20,6 +20,11 @@ namespace Edward.Wilde.CSharp.Features.Utilities
             PrintColor(message, ConsoleColor.Red);
         }
 
+        public static void PrintWarning(string message)
+        {
+            PrintColor(message, ConsoleColor.Yellow);
+        }
+
         public static void PrintInfo(string message)
         {
             PrintColor(message, ConsoleColor.White);

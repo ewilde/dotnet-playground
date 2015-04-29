@@ -13,7 +13,7 @@ namespace Edward.Wilde.CSharp.Features.Strings
         private static readonly ThreadLocal<Random> Random =
             new ThreadLocal<Random>(() => new Random((int) DateTime.Now.Ticks));
 
-        public static string MaxLength(this string source, int length)
+        public static string MaxLength(this string source, int length, string overflowSuffix = null)
         {
             if (source == null)
             {
@@ -25,8 +25,9 @@ namespace Edward.Wilde.CSharp.Features.Strings
                 return source;
             }
 
-            return source.Substring(0, length);
+            return source.Substring(0, length) + overflowSuffix;
         }
+
 
         public static bool StartsWithNumber(this string source)
         {
@@ -312,6 +313,7 @@ namespace Edward.Wilde.CSharp.Features.Strings
         {
             Assert.That("123456".MaxLength(2), Is.EqualTo("12"));
             Assert.That("123456".MaxLength(200), Is.EqualTo("123456"));
+            Assert.That("123456".MaxLength(2, "..."), Is.EqualTo("12..."));
         }
     }
 }
