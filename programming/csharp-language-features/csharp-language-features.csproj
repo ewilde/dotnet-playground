@@ -114,6 +114,7 @@
     <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_1_Where.cs" />
     <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_3_Skip_and_Take.cs" />
     <Compile Include="ReactiveExtensions\3. Inspections\Rx_inspections_1_any.cs" />
+    <Compile Include="Serialization\BinarySerializationExtension.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />
