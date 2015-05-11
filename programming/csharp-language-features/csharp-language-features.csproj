@@ -39,9 +39,15 @@
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="MsgPack">
+      <HintPath>..\..\packages\MsgPack.Cli.0.5.11\lib\net45\MsgPack.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SBE">
+      <HintPath>..\..\packages\Adaptive.SBE.1.0.0.112\lib\net40\SBE.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -115,6 +121,8 @@
     <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_3_Skip_and_Take.cs" />
     <Compile Include="ReactiveExtensions\3. Inspections\Rx_inspections_1_any.cs" />
     <Compile Include="Serialization\BinarySerializationExtension.cs" />
+    <Compile Include="Serialization\MessagePackEncodingExtensions.cs" />
+    <Compile Include="Serialization\SimpleBinaryEncodingExtensions.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />
