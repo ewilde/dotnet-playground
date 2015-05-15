@@ -23,6 +23,7 @@ namespace log4net_example
             _log.Error("This shouldn't have happended!");
             _log.Fatal("OMG totally going to halt this processes, this is FATAL!");
          
+            _log.Warn("This error", new NotImplementedException("Never got round to it..."));
             Console.ReadKey();
         }
     }

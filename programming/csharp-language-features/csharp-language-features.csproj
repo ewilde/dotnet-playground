@@ -122,7 +122,6 @@
     <Compile Include="ReactiveExtensions\3. Inspections\Rx_inspections_1_any.cs" />
     <Compile Include="Serialization\BinarySerializationExtension.cs" />
     <Compile Include="Serialization\MessagePackEncodingExtensions.cs" />
-    <Compile Include="Serialization\SimpleBinaryEncodingExtensions.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />
     <Compile Include="Singleton\SingletonPatterns.cs" />
