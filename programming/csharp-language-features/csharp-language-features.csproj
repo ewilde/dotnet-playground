@@ -135,6 +135,7 @@
     <Compile Include="Strings\StringFormatting.cs" />
     <Compile Include="Strings\StringLinq.cs" />
     <Compile Include="System\Console.cs" />
+    <Compile Include="System\DataTime.cs" />
     <Compile Include="Threading\InterlockExamples.cs" />
     <Compile Include="Timers\HighResolution.cs" />
     <Compile Include="Utilities\ConsoleUtility.cs" />
