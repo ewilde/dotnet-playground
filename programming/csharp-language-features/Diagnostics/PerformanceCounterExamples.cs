@@ -18,7 +18,7 @@ namespace Edward.Wilde.CSharp.Features.Diagnostics
                     "_Total"))
             {
                 pc.NextValue();
-                Thread.Sleep(1000);
+                Thread.Sleep(1000); // sleep for the first time after asking for the counter it's always 0 and needs to wait a bit
                 var nextValue = pc.NextValue();
                 
                 Console.WriteLine(nextValue.ToPercentage());
