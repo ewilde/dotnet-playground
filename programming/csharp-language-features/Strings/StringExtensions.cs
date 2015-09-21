@@ -66,6 +66,11 @@ namespace Edward.Wilde.CSharp.Features.Strings
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(source.ToLower());
         }
 
+        public static string ToPercentage(this string source)
+        {
+            return source + "%";
+        }
+
         public static string PascalCaseToWords(this string source)
         {
             var sb = new StringBuilder();

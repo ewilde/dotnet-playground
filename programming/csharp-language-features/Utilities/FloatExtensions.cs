@@ -13,6 +13,11 @@
             return value / 1024.0f / 1024.0f;
         }
 
+        public static string ToPercentage(this float value)
+        {
+            return value + "%";
+        }
+
         public static float Kilobytes(this float value)
         {
             return value * 1024;
