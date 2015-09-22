@@ -29,11 +29,11 @@ namespace Edward.Wilde.CSharp.Features.Diagnostics
             using (var pc = new PerformanceCounter(
                     "Process",
                     "% Processor Time",
-                    CurrentProcess.ProcessName))
+                    "CPUSTRES"))
             {
                 pc.NextValue();
                 Thread.Sleep(1000);
-                var nextValue = pc.NextValue();
+                var nextValue = pc.NextValue() / Environment.ProcessorCount;
                 Console.WriteLine(nextValue.ToPercentage());
             }
         }
@@ -46,6 +46,15 @@ namespace Edward.Wilde.CSharp.Features.Diagnostics
                     CurrentProcess.ProcessName))
             {
                 Console.WriteLine(pc.NextValue().ToMegabytes().ToString("n2") + " MB");
+            }
+        }
+
+        public static void MeasureMemoryAvailable()
+        {
+            using (var pc = new PerformanceCounter(
+                    "Memory", "Available MBytes"))
+            {                
+                Console.WriteLine(pc.NextValue().ToString("n2") + " MB");
             }
         }
 
@@ -69,6 +78,7 @@ namespace Edward.Wilde.CSharp.Features.Diagnostics
         {
             PerformanceCounterExamples.MeasureTotalCpu();
             PerformanceCounterExamples.MeasureProcessCpu();
+            PerformanceCounterExamples.MeasureMemoryAvailable();
             PerformanceCounterExamples.MeasurePrivateBytesConsumed();
             PerformanceCounterExamples.MeasureGen0Collections();
         }
