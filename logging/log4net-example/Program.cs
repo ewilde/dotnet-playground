@@ -19,11 +19,12 @@ namespace log4net_example
 
             new Employee();
             _log.Info("Useful stuff");
+            _log.Info("こんにちは"); // testing <encoding type="System.Text.UTF8Encoding" /> in the app.config
             _log.Warn("Be aware this could be important");
             _log.Error("This shouldn't have happended!");
             _log.Fatal("OMG totally going to halt this processes, this is FATAL!");
          
-            _log.Warn("This error", new NotImplementedException("Never got round to it..."));
+            _log.Warn("This error", new NotImplementedException("Never got round to it..."));            
             Console.ReadKey();
         }
     }
