@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Edward.Wilde.CSharp.Features.Utilities
 {
@@ -12,6 +14,21 @@ namespace Edward.Wilde.CSharp.Features.Utilities
                 action(i);
             }
         }
+
+        public static List<Task<T>> TimesAsync<T>(this int value, Func<int, T> func)
+        {
+            var tasks = new List<Task<T>>();
+
+            for (var i = 0; i < value; i++)
+            {
+                var j = i;
+                var task = new Task<T>(() => func(j), TaskCreationOptions.LongRunning);
+                task.Start();
+                tasks.Add(task);
+            }
+
+            return tasks;
+        } 
 
         public static bool Odd(this int value)
         {
