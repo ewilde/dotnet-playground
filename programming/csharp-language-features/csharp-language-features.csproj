@@ -42,6 +42,10 @@
     <Reference Include="MsgPack">
       <HintPath>..\..\packages\MsgPack.Cli.0.5.11\lib\net45\MsgPack.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
@@ -127,6 +131,7 @@
     <Compile Include="ReactiveExtensions\2. Sequence basics\Rx_seq_3_Skip_and_Take.cs" />
     <Compile Include="ReactiveExtensions\3. Inspections\Rx_inspections_1_any.cs" />
     <Compile Include="Serialization\BinarySerializationExtension.cs" />
+    <Compile Include="Serialization\JsonSerialization.cs" />
     <Compile Include="Serialization\MessagePackEncodingExtensions.cs" />
     <Compile Include="Serialization\Utf8StringWriter.cs" />
     <Compile Include="Serialization\XmlSerializationExtension.cs" />

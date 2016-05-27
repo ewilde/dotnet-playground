@@ -80,17 +80,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructures\Arrays\General.cs" />
+    <Compile Include="DataStructures\Arrays\Rotation.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="DataStructures\BinaryTree.cs" />
     <Compile Include="DataStructures\CircularBuffer.cs" />
+    <Compile Include="DataStructures\LinkedList.cs" />
+    <Compile Include="DataStructures\Stack\StandardStack.cs" />
     <Compile Include="Maths\Fibonacci.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Puzzles\LeeSolution.cs" />
     <Compile Include="Puzzles\PasscodeDerivation.cs" />
-    <Compile Include="Queue\StandardQueue.cs" />
+    <Compile Include="DataStructures\Queue\StandardQueue.cs" />
     <Compile Include="Sorting\HeapSort.cs" />
     <Compile Include="Sorting\InsertionSort.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
+    <Compile Include="Strings\WordsAndCharacters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
