@@ -85,6 +85,7 @@
     <Compile Include="Diagnostics\PerformanceCounterExamples.cs" />
     <Compile Include="Dispose\DisposableComponent.cs" />
     <Compile Include="Enums\EnumExtensions.cs" />
+    <Compile Include="Enums\TypeConverter.cs" />
     <Compile Include="Equality\OverridingEquals.cs" />
     <Compile Include="Exceptions\CustomExceptionWithProperties.cs" />
     <Compile Include="Expression Trees\ExpressionTrees.cs" />
