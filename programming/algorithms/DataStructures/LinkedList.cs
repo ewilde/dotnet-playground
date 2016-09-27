@@ -55,9 +55,10 @@ namespace algorithms.DataStructures
         [Test]
         public void TestIsPalindrome()
         {
-            //Assert.That(IsPalindrome(new LinkedList<int>(new [] {1,2,3,2,1})), Is.True);
-            //Assert.That(IsPalindrome(new LinkedList<int>(new [] {1,2,3,2})), Is.False);
-           // Assert.That(IsPalindrome(new LinkedList<char>(new [] {'f', 'o', 'o'})), Is.False);
+            var t = new List<int>();
+            Assert.That(IsPalindrome(new LinkedList<int>(new [] {1,2,3,2,1})), Is.True);
+            Assert.That(IsPalindrome(new LinkedList<int>(new [] {1,2,3,2})), Is.False);
+            Assert.That(IsPalindrome(new LinkedList<char>(new [] {'f', 'o', 'o'})), Is.False);
             Assert.That(IsPalindrome(new LinkedList<char>(new [] {'f', 'o', 'z', 'o', 'f'})), Is.True);
             Assert.That(IsPalindrome(new LinkedList<char>(new[] {'s', 't', 'e', 'p', ' ', 'o', 'n', ' ', 'n', 'o', ' ', 'p', 'e', 't', 's'})), Is.True);
         }

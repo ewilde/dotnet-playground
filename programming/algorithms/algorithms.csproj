@@ -86,6 +86,7 @@
     <Compile Include="DataStructures\BinaryTree.cs" />
     <Compile Include="DataStructures\CircularBuffer.cs" />
     <Compile Include="DataStructures\LinkedList.cs" />
+    <Compile Include="DataStructures\Stack\StackUsingArray.cs" />
     <Compile Include="DataStructures\Stack\StandardStack.cs" />
     <Compile Include="Maths\Fibonacci.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

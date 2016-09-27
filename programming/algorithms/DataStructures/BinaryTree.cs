@@ -15,7 +15,12 @@ namespace algorithms.DataStructures
 
         public Node<T> Root { get; set; }
 
-        public void DepthFirst_PreOrder_Traversal_Iterative(Action<Node<T>> callback)
+        /// <summary>
+        /// 1. Display the data part of the root (or current node).
+        /// 2. Traverse the left subtree by recursively calling the pre-order function.
+        /// 3. Traverse the right subtree by recursively calling the pre-order function.
+        /// </summary>
+        public void DepthFirst_PreOrder_Traversal_Iterative(Action<Node<T>> visitNode)
         {
             var stack = new Stack<Node<T>>();
             stack.Push(this.Root);
@@ -23,7 +28,7 @@ namespace algorithms.DataStructures
             while (stack.Count > 0)
             {
                 var node = stack.Pop();
-                callback(node);
+                visitNode(node);
 
                 if (node.Right != null)
                     stack.Push(node.Right);
@@ -33,6 +38,11 @@ namespace algorithms.DataStructures
             }
         }
 
+        /// <summary>
+        /// 1. Traverse the left subtree by recursively calling the in-order function.
+        /// 2. Display the data part of the root(or current node).
+        /// 3. Traverse the right subtree by recursively calling the in-order function.
+        /// </summary>
         public void DepthFirst_InOrder_Traversal_Iterative(Action<Node<T>> callback)
         {
             var stack = new Stack<Node<T>>();
