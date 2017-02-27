@@ -1,13 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using Edward.Wilde.CSharp.Features.Strings;
+using NUnit.Framework;
 
 namespace Edward.Wilde.CSharp.Features.Utilities
 {
     public static class IntegerExtensions
     {
+        private static readonly ThreadLocal<Random> RandomGenerator =
+            new ThreadLocal<Random>(() => new Random((int) DateTime.Now.Ticks));
+
+        public static int To(this int value)
+        {
+            return value;
+        }
+
+        public static int Random(this int value, int upperValue)
+        {
+            return RandomGenerator.Value.Next(value, upperValue);
+        }
+
         public static void Times(this int value,
-                                 Action<int> action)
+            Action<int> action)
         {
             for (int i = 0; i < value; i++)
             {
@@ -28,7 +44,7 @@ namespace Edward.Wilde.CSharp.Features.Utilities
             }
 
             return tasks;
-        } 
+        }
 
         public static bool Odd(this int value)
         {
@@ -63,14 +79,18 @@ namespace Edward.Wilde.CSharp.Features.Utilities
             {
                 switch (value % 10)
                 {
-                case 1:
-                    ordinalized = "st"; break;
-                case 2:
-                    ordinalized = "nd"; break;
-                case 3:
-                    ordinalized = "rd"; break;
-                default:
-                    ordinalized = "th"; break;
+                    case 1:
+                        ordinalized = "st";
+                        break;
+                    case 2:
+                        ordinalized = "nd";
+                        break;
+                    case 3:
+                        ordinalized = "rd";
+                        break;
+                    default:
+                        ordinalized = "th";
+                        break;
                 }
             }
 
@@ -104,6 +124,16 @@ namespace Edward.Wilde.CSharp.Features.Utilities
         public static TimeSpan Seconds(this int value)
         {
             return TimeSpan.FromSeconds(value);
-        } 
+        }
+    }
+
+    [TestFixture]
+    public class IntegerExtensionsTests
+    {
+        [Test]
+        public void Random_number_should_stay_within_bounds()
+        {
+            Assert.That(1.To().Random(upperValue: 10).Between(1, 10));            
+        }
     }
 }
