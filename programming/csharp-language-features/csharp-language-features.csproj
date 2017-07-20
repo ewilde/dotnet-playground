@@ -164,6 +164,7 @@
     <Compile Include="Utilities\ReflectionUtility.cs" />
     <Compile Include="Utilities\RetryUtility.cs" />
     <Compile Include="Utilities\TableParser.cs" />
+    <Compile Include="Threading\CancellationTokenExamples.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
